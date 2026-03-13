@@ -337,16 +337,27 @@ a{color:inherit}
 @media (min-width:821px){
   .left .connector-line{
     position:absolute;
-    left:88px;
-    bottom:112px;
-    width:41vw;
+    left:260px; /* start near links */
+    bottom:78px; /* align with bottom of link stack */
+    width:32vw;
+    max-width:640px;
     height:2px;
     background:rgba(0,0,0,.38);
-    transform:rotate(-2deg);
-    transform-origin:left center;
+    transform:none;
     z-index:8;
     pointer-events:none;
-  }
+}
+
+/* vertical drop from logo area */
+.left .connector-line::after{
+    content:"";
+    position:absolute;
+    right:-2px;
+    bottom:0;
+    width:2px;
+    height:220px;
+    background:rgba(0,0,0,.38);
+}
 }
 
 .right-media{position:absolute;inset:0}
@@ -370,7 +381,16 @@ a{color:inherit}
 .mobile-cut-bottom,
 .mobile-icon-slot,
 .mobile-fade,
-.mobile-fade-edge{display:none}
+.mobile-fade-edge{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:45.9%;
+    height:2px;
+    background:rgba(0,0,0,.55);
+    z-index:2;
+    pointer-events:none;
+}
 
 @media (min-width:821px){
   .left .connector-line{
