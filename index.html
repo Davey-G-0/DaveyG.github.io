@@ -117,7 +117,7 @@ body{position:relative}
   justify-content:space-between;
   min-height:100%;
   background:var(--acid);
-  padding:1.25rem 1.7rem 1.35rem 1rem;
+  padding:1.25rem 1.7rem 3.2rem 1rem; /* extra bottom space so decor doesn't collide with links */
   overflow:hidden;
 }
 .left::before{
@@ -154,6 +154,7 @@ body{position:relative}
 }
 
 .left-decor{
+  z-index:2;
   position:absolute;
   inset:0;
   pointer-events:none;
@@ -192,11 +193,11 @@ body{position:relative}
 }
 .left-decor .micro-bars.bottom{
   left:1.1rem;
-  bottom:3rem;
+  bottom:6.2rem; /* move higher so it doesn't sit under links */
   width:120px;
   height:16px;
   background:repeating-linear-gradient(to right, var(--ink) 0 8px, transparent 8px 11px, var(--ink) 11px 22px, transparent 22px 25px);
-  opacity:.92;
+  opacity:.85;
 }
 .left-decor .plus.a{
   left:1.15rem;
@@ -220,7 +221,7 @@ body{position:relative}
 }
 .left-decor .ring{
   left:1.7rem;
-  bottom:4.2rem;
+  bottom:7.2rem; /* raise icon ring so it doesn't overlap links */
   width:70px;
   height:70px;
   border:12px solid var(--ink);
@@ -228,7 +229,7 @@ body{position:relative}
   border-top-color:transparent;
   border-radius:50%;
   transform:rotate(45deg);
-  opacity:.96;
+  opacity:.9;
 }
 .left-decor .tiny-stack{
   left:1rem;
@@ -376,9 +377,9 @@ body{position:relative}
 .links-panel{
   position:absolute;
   left:2.2rem;
-  bottom:1.35rem;
+  bottom:1.9rem; /* push links slightly down */
   width:min(640px, calc(100% - 4.4rem));
-  z-index:5;
+  z-index:12; /* ensure links always sit above decor */
 }
 .link-list{display:grid;gap:.7rem}
 .link-btn{
@@ -440,7 +441,8 @@ body{position:relative}
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow:0 0 0 1px rgba(0,0,0,.12);
+  /* larger halo so the image side never bleeds under it */
+  box-shadow:0 0 0 10px var(--acid), 0 0 0 1px rgba(0,0,0,.12);
 }
 .center-mark img{
   width:100%;
