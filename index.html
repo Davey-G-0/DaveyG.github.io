@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Davey G. | Links</title>
+<link rel="icon" type="image/png" href="favicon.png" />
 <style>
 :root{
   --acid:#c0fe03;
@@ -30,7 +31,7 @@ body{position:relative}
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:2rem;
+  padding:0;
   position:relative;
   background:var(--acid);
 }
@@ -100,23 +101,33 @@ body{position:relative}
 }
 
 .screen{
-  width:min(96vw,1720px);
-  aspect-ratio:16/9;
-  min-height:720px;
-  max-height:92vh;
+  width:100vw;
+  height:100vh;
   display:grid;
-  grid-template-columns:34% 66%;
+  grid-template-columns:50% 50%;
   background:transparent;
   position:relative;
-  overflow:visible;
+  overflow:hidden;
 }
 
 .left{
-  padding:2.2vw 0 2.2vw 2.2vw;
   position:relative;
   display:flex;
   flex-direction:column;
-  justify-content:flex-start;
+  justify-content:space-between;
+  min-height:100%;
+  background:var(--acid);
+  padding:1.4rem 1.7rem 1.5rem 1.3rem;
+  overflow:hidden;
+}
+.left::before{
+  content:"";
+  position:absolute;
+  top:0;
+  right:-1px;
+  width:1px;
+  height:100%;
+  background:rgba(0,0,0,.18);
 }
 
 .right{
@@ -124,51 +135,147 @@ body{position:relative}
   background:linear-gradient(180deg,#18406b 0%,#0d2e58 18%,#0a1d35 60%,#06111e 100%);
   overflow:hidden;
   min-height:100%;
-  box-shadow:0 18px 50px rgba(0,0,0,.22);
 }
 
 .brand-wrap{
   position:relative;
   z-index:4;
-  margin-top:8%;
-  margin-left:8%;
-  max-width:300px;
+  max-width:620px;
+  padding-left:1.35rem;
+  padding-top:.5rem;
 }
 
-.brand{
-  font-size:clamp(4.2rem,7vw,7.6rem);
-  letter-spacing:.01em;
-  line-height:.84;
-  text-transform:uppercase;
+.brand-grid{
+  display:grid;
+  grid-template-columns:24px 1fr;
+  align-items:start;
+  column-gap:1rem;
 }
+
+.side-strip{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:.55rem;
+  padding-top:.2rem;
+  font-family:Arial,Helvetica,sans-serif;
+  color:rgba(0,0,0,.88);
+}
+.side-strip .mini-bars{
+  width:12px;
+  height:76px;
+  background:repeating-linear-gradient(to bottom, var(--ink) 0 4px, transparent 4px 6px);
+}
+.side-strip .mini-x,
+.side-strip .mini-cam,
+.side-strip .mini-code{
+  font-size:.95rem;
+  line-height:1;
+}
+.side-strip .mini-code{
+  writing-mode:vertical-rl;
+  text-orientation:mixed;
+  font:900 .9rem/1 "Courier New", monospace;
+  letter-spacing:.12em;
+}
+
+.brand-main{
+  display:flex;
+  flex-direction:column;
+  gap:.7rem;
+}
+
+.brand-logo{
+  font-size:clamp(4.4rem,8.15vw,8.4rem);
+  letter-spacing:-.02em;
+  line-height:.8;
+  text-transform:uppercase;
+  max-width:none;
+  white-space:nowrap;
+}
+.brand-logo .line{display:inline-block}
+.brand-logo .line + .line{margin-left:.12em}
+.brand-logo .tight{letter-spacing:-.03em}
+.brand-logo .tight{letter-spacing:-.02em}
+
 .brand small{
   display:block;
   font-family:Arial,Helvetica,sans-serif;
   font-weight:900;
-  font-size:.26em;
-  letter-spacing:.14em;
-  margin-top:.4rem;
+  font-size:1rem;
+  letter-spacing:.34em;
+  margin-top:.15rem;
+  text-transform:uppercase;
 }
 
-.prompt,
+.meta-stack{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:.95rem 1.25rem;
+  margin-top:.15rem;
+  max-width:560px;
+}
+.meta-col{
+  font-family:"Courier New",monospace;
+  font-size:.72rem;
+  line-height:1.25;
+  text-transform:uppercase;
+  color:rgba(0,0,0,.85);
+}
+.meta-col strong{
+  display:block;
+  margin-bottom:.2rem;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:.72rem;
+  letter-spacing:.18em;
+}
+.barcode-row{
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+  margin-top:.15rem;
+}
+.barcode{
+  width:120px;
+  height:16px;
+  background:repeating-linear-gradient(to right, var(--ink) 0 2px, transparent 2px 4px, var(--ink) 4px 7px, transparent 7px 8px);
+}
+.barcode-id{
+  font:900 .8rem/1 "Courier New", monospace;
+  letter-spacing:.08em;
+}
+
+.prompt{
+  margin-top:.85rem;
+  font-family:Arial,Helvetica,sans-serif;
+  font-weight:900;
+  font-size:.95rem;
+  text-transform:uppercase;
+  color:rgba(0,0,0,.68);
+  letter-spacing:.11em;
+}
 .meta{
-  display:none;
+  margin-top:.15rem;
+  font-family:"Courier New",monospace;
+  font-size:.73rem;
+  letter-spacing:.08em;
+  color:rgba(0,0,0,.8);
 }
 
 .links-panel{
   position:absolute;
-  left:8%;
-  bottom:7%;
-  width:min(420px,76%);
+  left:1.7rem;
+  bottom:1.55rem;
+  width:min(640px, calc(100% - 3.4rem));
   z-index:5;
 }
-.link-list{display:grid;gap:.7rem}
+.link-list{display:grid;gap:.85rem}
 .link-btn{
   text-decoration:none;
   color:var(--white);
-  background:linear-gradient(180deg,rgba(7,26,46,.8),rgba(7,24,40,.92));
+  background:linear-gradient(180deg,rgba(7,26,46,.82),rgba(7,24,40,.94));
   border:1px solid var(--panel-border);
-  padding:1rem 1.05rem;
+  padding:1.08rem 1.15rem;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -180,7 +287,8 @@ body{position:relative}
   box-shadow:0 10px 26px rgba(0,0,0,.25);
   position:relative;
   overflow:hidden;
-  font-size:1rem;
+  font-size:1.02rem;
+  border-radius:0;
 }
 .link-btn::before{
   content:"";
@@ -203,8 +311,34 @@ body{position:relative}
 .index{
   font-family:"Courier New",monospace;
   color:rgba(200,255,0,.9);
-  margin-right:.6rem;
+  margin-right:.9rem;
+  font-size:.82em;
 }
+
+.center-mark{
+  position:absolute;
+  left:100%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  z-index:20;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  border:0;
+  background:var(--acid);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 0 0 1px rgba(0,0,0,.12);
+}
+.center-mark img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+  filter:drop-shadow(0 0 6px rgba(0,0,0,.12));
+}
+.center-mark::after{display:none}
 
 .right-media{
   position:absolute;
@@ -220,6 +354,7 @@ body{position:relative}
   width:100%;
   height:100%;
   object-fit:cover;
+  object-position:center center;
   filter:saturate(1.08) contrast(1.02) brightness(.94);
 }
 .frame.f1{animation-delay:0s}
@@ -289,37 +424,60 @@ body{position:relative}
   .app{padding:0}
   .screen{
     width:100%;
-    aspect-ratio:auto;
+    height:auto;
     min-height:100vh;
     display:block;
     box-shadow:none;
   }
-  .right{display:none}
-  .left{padding:1.5rem 1rem}
+  .right,.center-mark{display:none}
+  .left{
+    padding:1.3rem 1rem 1.4rem;
+    background:var(--acid);
+  }
+  .left::before{display:none}
   .brand-wrap{
     margin:0;
     max-width:none;
+    padding-left:0;
   }
-  .brand{font-size:clamp(2.8rem,16vw,4.5rem)}
-  .prompt,.meta{
-    display:block;
+  .brand-grid{
+    grid-template-columns:18px 1fr;
+    column-gap:.65rem;
+  }
+  .side-strip{
+    gap:.45rem;
+  }
+  .side-strip .mini-bars{
+    width:8px;
+    height:52px;
+  }
+  .side-strip .mini-x,
+  .side-strip .mini-cam,
+  .side-strip .mini-code{
+    font-size:.76rem;
+  }
+  .brand-logo{font-size:clamp(2.8rem,16vw,4.7rem);white-space:normal;letter-spacing:-.01em}
+  .brand-logo .line{display:block}
+  .brand-logo .line + .line{margin-left:0}
+  .brand small{
+    font-size:.8rem;
+    letter-spacing:.24em;
+  }
+  .meta-stack{
+    grid-template-columns:1fr;
+    gap:.55rem;
+    margin-top:.4rem;
   }
   .prompt{
-    font-family:Arial,Helvetica,sans-serif;
-    font-weight:900;
-    font-size:1rem;
-    text-transform:uppercase;
-    color:rgba(0,0,0,.35);
-    margin-top:.5rem;
+    font-size:.95rem;
+    margin-top:.65rem;
   }
   .meta{
-    font-family:"Courier New",monospace;
-    font-size:.8rem;
-    letter-spacing:.06em;
-    margin-top:.5rem;
+    font-size:.76rem;
+    margin-top:.35rem;
   }
-  .links-panel{position:static;margin-top:1.5rem;width:100%}
-  .link-btn{padding:.85rem .9rem;font-size:.9rem}
+  .links-panel{position:static;margin-top:1.35rem;width:100%}
+  .link-btn{padding:.92rem .95rem;font-size:.94rem}
   .intro-title{font-size:clamp(2.4rem,14vw,4rem)}
   .intro-sub{font-size:.8rem;letter-spacing:.12em}
   .intro-prompt{font-size:.8rem;padding:.8rem 1rem}
@@ -332,6 +490,7 @@ body{position:relative}
     <h1 class="intro-title">Davey G</h1>
     <div class="intro-sub">Creator Hub // Enter Terminal</div>
     <div class="intro-prompt">Press any key or tap to continue</div>
+    <!-- Upload favicon as favicon.png and center divider logo as center-logo.png in the repo root -->
   </div>
 </div>
 
@@ -339,12 +498,45 @@ body{position:relative}
   <div class="screen">
     <section class="left">
       <div class="brand-wrap">
-        <div class="brand">
-          Davey G
-          <small>Creator Hub</small>
+        <div class="brand-grid">
+          <div class="side-strip" aria-hidden="true">
+            <div class="mini-bars"></div>
+            <div class="mini-x">×</div>
+            <div class="mini-cam">◙</div>
+            <div class="mini-code">28 93</div>
+          </div>
+
+          <div class="brand-main">
+            <div class="brand">
+              <div class="brand-logo">
+                <span class="line">Davey</span>
+                <span class="line tight">G</span>
+              </div>
+              <small>Creator Hub</small>
+            </div>
+
+            <div class="meta-stack">
+              <div class="meta-col">
+                <strong>Signal</strong>
+                Creator link terminal active<br>
+                Social routing online
+              </div>
+              <div class="meta-col">
+                <strong>Status</strong>
+                Desktop mode synced<br>
+                Mobile quick links armed
+              </div>
+            </div>
+
+            <div class="barcode-row" aria-hidden="true">
+              <div class="barcode"></div>
+              <div class="barcode-id">DG-2893-X</div>
+            </div>
+
+            <div class="prompt">Press any key to continue</div>
+            <div class="meta">||||||||| × digital terminal ▬</div>
+          </div>
         </div>
-        <div class="prompt">Social + Content Links</div>
-        <div class="meta">||||||||| × digital terminal ▬</div>
       </div>
 
       <div class="links-panel">
@@ -366,6 +558,10 @@ body{position:relative}
             <span>↗</span>
           </a>
         </div>
+      </div>
+
+      <div class="center-mark" aria-hidden="true">
+        <img src="center-logo.png" alt="" />
       </div>
     </section>
 
