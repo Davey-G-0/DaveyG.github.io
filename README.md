@@ -34,10 +34,10 @@ a:hover{
 
 <h1>DaveyNation</h1>
 
-<a href="https://youtube.com">YouTube</a>
-<a href="https://twitter.com">Twitter</a>
-<a href="https://instagram.com">Instagram</a>
-<a href="https://github.com">GitHub</a>
+<a href="https://www.youtube.com/@DaveyG">YouTube</a>
+<a href="https://www.tiktok.com/@daveyg920?is_from_webapp=1&sender_device=pc">TikTok</a>
+<a href="https://www.instagram.com/_daveyg._/">Instagram</a>
+<a href="https://hardwareranked.com/">HARDWARE RANKED</a>
 
 </body>
 </html>
