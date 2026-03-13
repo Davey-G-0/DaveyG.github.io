@@ -335,28 +335,28 @@ a{color:inherit}
 
 /* desktop connector line */
 @media (min-width:821px){
-  .left .connector-line{
-    position:absolute;
-    left:260px; /* start near links */
-    bottom:78px; /* align with bottom of link stack */
-    width:32vw;
-    max-width:640px;
-    height:2px;
-    background:rgba(0,0,0,.38);
-    transform:none;
-    z-index:8;
-    pointer-events:none;
+  /* desktop link → logo connector (L shaped like mockup) */
+.left .connector-line{
+  position:absolute;
+  left:220px;            /* start just after links */
+  bottom:72px;           /* align with bottom link */
+  width:40vw;            /* horizontal run */
+  max-width:720px;
+  height:2px;
+  background:rgba(0,0,0,.38);
+  z-index:8;
+  pointer-events:none;
 }
 
-/* vertical drop from logo area */
+/* vertical rise toward the logo */
 .left .connector-line::after{
-    content:"";
-    position:absolute;
-    right:-2px;
-    bottom:0;
-    width:2px;
-    height:220px;
-    background:rgba(0,0,0,.38);
+  content:"";
+  position:absolute;
+  right:0;
+  bottom:0;
+  width:2px;
+  height:180px;
+  background:rgba(0,0,0,.38);
 }
 }
 
@@ -382,14 +382,16 @@ a{color:inherit}
 .mobile-icon-slot,
 .mobile-fade,
 .mobile-fade-edge{
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:45.9%;
-    height:2px;
-    background:rgba(0,0,0,.55);
-    z-index:2;
-    pointer-events:none;
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:46%;
+  height:2px;
+  background:rgba(0,0,0,.55);
+  transform:skewY(-32deg);
+  transform-origin:left center;
+  z-index:2;
+  pointer-events:none;
 }
 
 @media (min-width:821px){
