@@ -13,7 +13,7 @@
       --blue-2: #0f57a7;
       --blue-3: #68d8ff;
       --white: #f3f7fb;
-      --line-dark: rgba(0, 0, 0, 0.16);
+      --line-dark: rgba(0, 0, 0, 0.16);F
       --line-light: rgba(255, 255, 255, 0.12);
       --panel: rgba(5, 18, 33, 0.72);
       --panel-border: rgba(170, 240, 255, 0.26);
@@ -557,7 +557,8 @@
       <div class="center-notch"></div>
 
       <div class="top-ui">
-        <h1 class="logo"><span class="mark">Davey G. - Link Terminal</span></h1>
+        <h1 class="logo"><span class="mark">Davey G.
+        <span>Link terminal</span></span></h1>
       </div>
 
       <div class="prompt-wrap">
@@ -595,8 +596,7 @@
       </div>
 
       <div class="tiny-meta">
-        Davey G.
-        <span>Link terminal</span>
+        
       </div>
 
       <div class="right-media">
