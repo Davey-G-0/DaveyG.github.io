@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Davey G. | Links</title>
+  <title>Links | Links</title>
   <style>
     :root {
       --acid: #c8ff00;
@@ -558,7 +557,7 @@
       <div class="center-notch"></div>
 
       <div class="top-ui">
-        <h1 class="logo"><span class="mark">Marathon</span></h1>
+        <h1 class="logo"><span class="mark">Davey G. - Link Terminal</span></h1>
       </div>
 
       <div class="prompt-wrap">
